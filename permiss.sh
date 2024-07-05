@@ -40,11 +40,11 @@ translate_permission() {
     others_perm="Read: $(translate_char ${perm:7:1}) Write: $(translate_char ${perm:8:1}) Execute: $(translate_char ${perm:9:1})"
 
     # Print formatted output with equal signs
-    echo   "----------------------------------------------------------"
+    echo "----------------------------------------------------------"
     printf "Owner  = %-40s \n" "$owner_type $owner_perm"
     printf "Group  = %-40s \n" "$group_perm"
     printf "Others = %-40s \n" "$others_perm"
-    echo   "----------------------------------------------------------"
+    echo "----------------------------------------------------------"
 }
 
 # Check if a permission string is provided as an argument
@@ -52,5 +52,3 @@ if [ $# -eq 0 ]; then
     echo "Usage: $0 <permission_string>"
     exit 1
 fi
-
-# Call function with provided permission string
